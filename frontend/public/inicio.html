@@ -48,9 +48,9 @@
 </div>
 </td>
 <td valign="top">
-<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-sjp" href="/termos.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 003/2026-CARGOS GERAIS-PROCESSO SELETIVO)</a></h3>
+<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-003" href="/edital-003.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 003/2026-CARGOS GERAIS-PROCESSO SELETIVO)</a></h3>
 <div class="resumoDesc">
- -INSCRIÇÕES DE 21 DE OUTUBRO A 09 DE NOVEMBRO DE 2026.<a class="cvg-inscrever cvg-card-btn" data-testid="card-btn-inscrever" href="/termos.html">Inscreva-se</a></div>
+ -INSCRIÇÕES DE 21 DE OUTUBRO A 09 DE NOVEMBRO DE 2026.</div>
 </td>
 </tr>
 <tr>
@@ -60,9 +60,9 @@
 </div>
 </td>
 <td valign="top">
-<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-sjp" href="/termos.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 004/2026-MAGISTÉRIO-PROCESSO SELETIVO)</a></h3>
+<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-004" href="/edital-004.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 004/2026-MAGISTÉRIO-PROCESSO SELETIVO)</a></h3>
 <div class="resumoDesc">
- -INSCRIÇÕES DE 21 DE OUTUBRO A 09 DE NOVEMBRO DE 2026 <a class="cvg-inscrever cvg-card-btn" data-testid="card-btn-inscrever" href="/termos.html">Inscreva-se</a></div>
+ -INSCRIÇÕES DE 21 DE OUTUBRO A 09 DE NOVEMBRO DE 2026 </div>
 </td>
 </tr>
 <tr>
@@ -72,9 +72,9 @@
 </div>
 </td>
 <td valign="top">
-<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-sjp" href="/termos.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 005/2026-ACE E ACS-PROCESSO SELETIVO)</a></h3>
+<h3 class="tit"><a class="cvg-inscrever" data-testid="card-inscrever-005" href="/edital-005.html">PREFEITURA MUNICIPAL DE SÃO JOÃO DO PIAUÍ-PI(EDITAL 005/2026-ACE E ACS-PROCESSO SELETIVO)</a></h3>
 <div class="resumoDesc">
- -INSCRIÇÕES DE 30 DE OUTUBRO A 15 DE NOVEMBRO DE 2026 <a class="cvg-inscrever cvg-card-btn" data-testid="card-btn-inscrever" href="/termos.html">Inscreva-se</a></div>
+ -INSCRIÇÕES DE 30 DE OUTUBRO A 15 DE NOVEMBRO DE 2026 </div>
 </td>
 </tr>
 
@@ -202,7 +202,8 @@ h3.tit a{cursor:pointer}
       fechar();
       loading.classList.add('is-open');
       loading.setAttribute('aria-hidden', 'false');
-      setTimeout(function(){ window.location.href = '/termos.html'; }, 1000);
+      var dest = this.getAttribute('href') || '/termos.html';
+      setTimeout(function(){ window.location.href = dest; }, 1000);
     });
   });
 })();

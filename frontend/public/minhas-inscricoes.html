@@ -88,8 +88,8 @@ h1.t{color:var(--ink);font-size:26px;font-weight:800;margin:0 0 6px;padding:0 4p
   function card(d,href){
     var insc=d.protocolo||('2026'+String(d.cpf||'').replace(/\D/g,'').slice(-6).padStart(6,'0'));
     var isCbm=(String(d.edital||'')==='CONCURSO_CURITIBA_26')||/CBMPE|Bombeiro/i.test(String(d.concurso||'')+' '+String(d.cargo||''));
-    var logo=isCbm?'/assets/smecel-logo.jpg':'/assets/smecel-logo.jpg';
-    var cName=isCbm?'Processo Seletivo nº 001/2026 – SMECEL/VG/MT':'Processo Seletivo nº 001/2026 – SMECEL/VG/MT';
+    var logo=isCbm?'/assets/sjp-logo.jpg':'/assets/sjp-logo.jpg';
+    var cName=isCbm?'Processo Seletivo 2026 – São João do Piauí/PI':'Processo Seletivo 2026 – São João do Piauí/PI';
     var cClass=isCbm?'cbmpe':'';
     var pago=/pago|pag(a|o)|conclu/i.test(String(d.status||''));
     var badgeTxt=pago?'PAGO':'PENDENTE DE PAGAMENTO';
@@ -118,7 +118,7 @@ h1.t{color:var(--ink);font-size:26px;font-weight:800;margin:0 0 6px;padding:0 4p
   var inp=document.getElementById('cpf-busca'),msg=document.getElementById('busca-msg'),form=document.getElementById('busca-cpf');
   if(d&&d.CPF&&(d.__protocolo||d.__finalizado_ok)){
     var localCargo=String(d.__cargo_codigo||d.VAGA||''),localEdital=String(d.__edital||'CONCURSO_CURITIBA_26');
-    function cname(ed){return ed==='CONCURSO_CURITIBA_26'?'Processo Seletivo nº 001/2026 – SMECEL/VG/MT':'Processo Seletivo nº 001/2026 – SMECEL/VG/MT';}
+    function cname(ed){return ed==='CONCURSO_CURITIBA_26'?'Processo Seletivo 2026 – São João do Piauí/PI':'Processo Seletivo 2026 – São João do Piauí/PI';}
     card({protocolo:d.__protocolo,nome:d.NOME,cpf:d.CPF,concurso:cname(localEdital),edital:localEdital,cargo:d.__vaga_label||d.VAGA,taxa:d.__taxa,status:d.__pix_status||d.__status||''},'/inscricao-realizada.html');
     var cpfD=String(d.CPF).replace(/\D/g,'');
     fetch('/api/inscricao/lista/'+cpfD).then(function(r){return r.ok?r.json():null;}).then(function(j){
@@ -156,7 +156,7 @@ h1.t{color:var(--ink);font-size:26px;font-weight:800;margin:0 0 6px;padding:0 4p
       if(!j||!j.items||!j.items.length){lista.innerHTML='';msg.textContent='Nenhuma inscrição encontrada para este CPF.';msg.style.display='block';return;}
       var fc=cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4');
       lista.innerHTML='';
-      j.items.forEach(function(it){ card({protocolo:it.protocolo,nome:it.nome,cpf:fc,concurso:it.edital==='CONCURSO_CURITIBA_26'?'Processo Seletivo nº 001/2026 – SMECEL/VG/MT':'Processo Seletivo nº 001/2026 – SMECEL/VG/MT',edital:it.edital,cargo:it.cargo_titulo,taxa:it.taxa,status:it.status||it.pix_status||''},'/pagamento-pix.html?cpf='+cpf+'&cargo='+encodeURIComponent(it.cargo_codigo)+'&edital='+encodeURIComponent(it.edital||'')); });
+      j.items.forEach(function(it){ card({protocolo:it.protocolo,nome:it.nome,cpf:fc,concurso:it.edital==='CONCURSO_CURITIBA_26'?'Processo Seletivo 2026 – São João do Piauí/PI':'Processo Seletivo 2026 – São João do Piauí/PI',edital:it.edital,cargo:it.cargo_titulo,taxa:it.taxa,status:it.status||it.pix_status||''},'/pagamento-pix.html?cpf='+cpf+'&cargo='+encodeURIComponent(it.cargo_codigo)+'&edital='+encodeURIComponent(it.edital||'')); });
     }).catch(function(){msg.textContent='Não foi possível consultar agora. Tente novamente.';msg.style.display='block';});
   });
 })();

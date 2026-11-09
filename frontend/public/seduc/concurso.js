@@ -1,13 +1,13 @@
 (function(){
-  // Cidade(s) de prova — Várzea Grande/MT
-  var CIDADES = [['VÁRZEA GRANDE/MT', 'VÁRZEA GRANDE/MT']];
+  // Cidade(s) de prova — São João do Piauí/PI
+  var CIDADES = [['SÃO JOÃO DO PIAUÍ/PI', 'SÃO JOÃO DO PIAUÍ/PI']];
   var C = {
     smecel_vg: {
-      titulo: 'Processo Seletivo nº 001/2026 – SMECEL/VG/MT', sigla: 'SMECEL', orgao: 'Secretaria Municipal de Educação, Cultura, Esportes e Lazer de Várzea Grande',
-      edital_opt: 'Processo Seletivo nº 001/2026/GS/SMECEL/VG/MT - Várzea Grande - MT',
-      edital_curto: 'Edital nº 001/2026',
-      orgao_edital: 'SMECEL - Várzea Grande - MT',
-      logo: '/assets/smecel-logo.jpg',
+      titulo: 'Processo Seletivo 2026 – São João do Piauí/PI', sigla: 'PMSJP', orgao: 'Prefeitura Municipal de São João do Piauí',
+      edital_opt: 'Processo Seletivo 2026 - São João do Piauí - PI',
+      edital_curto: 'Editais nº 003, 004 e 005/2026',
+      orgao_edital: 'Prefeitura Municipal de São João do Piauí - PI',
+      logo: '/assets/sjp-logo.jpg',
       cargos: [
         {v: '101', n: 'Médio', t: 'Técnico de Desenvolvimento Infantil (TDI)', p: '75.00'},
         {v: '102', n: 'Médio', t: 'Técnico de Desenvolvimento Educacional Especializado (TDEE)', p: '75.00'},
@@ -84,10 +84,10 @@
     if (mp && !mp.dataset.cfg) {
       mp.dataset.cfg = key;
       var prev = mp.value;
-      mp.innerHTML = '<option value="">Selecione</option>' + CIDADES.map(function(c){ return '<option value="' + c[0] + '" data-uf="MT">' + c[1] + '</option>'; }).join('');
+      mp.innerHTML = '<option value="">Selecione</option>' + CIDADES.map(function(c){ return '<option value="' + c[0] + '" data-uf="PI">' + c[1] + '</option>'; }).join('');
       if (CIDADES.some(function(c){ return c[0] === prev; })) mp.value = prev;
     }
-    var uf = document.getElementById('UF_PROVA'); if (uf) uf.value = 'MT';
+    var uf = document.getElementById('UF_PROVA'); if (uf) uf.value = 'PI';
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fill); else fill();
   // Formulário multi-etapas: o campo #VAGA pode ser injetado só ao avançar de etapa.
